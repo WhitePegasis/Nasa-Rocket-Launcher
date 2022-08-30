@@ -16,11 +16,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 //app.use(express.static('public'));
 
-app.use(planetsRouter);
-app.use(launchesRouter);
+app.use('/planets',planetsRouter);
+app.use('/launches',launchesRouter); //only accept request under /launches route i.e /launches is the root for all request
 
 app.get('/*',(req,res)=>{
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'public', 'favicon.png'));
 });
 
 
