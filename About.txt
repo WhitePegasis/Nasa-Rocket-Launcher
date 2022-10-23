@@ -1,0 +1,8 @@
+1.Tech stack: Node.js , Express.js, Mongodb
+2.Used MVC structure
+3.Used csv-parser package to parse csv data
+4.Created multiple routes using express.js 
+5.Implemented cors(cross origin requests) middleware using node's cors package, 
+because both front end was running on a different port and making requests from there to backend.
+6.Implemented clustering using pm2 package and improved websites performance.
+7. Used express's static() method to serve front end directly through backend(i.e in the same port).

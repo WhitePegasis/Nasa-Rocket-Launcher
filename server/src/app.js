@@ -1,9 +1,7 @@
 const path=require('path');
 const express=require('express');
 const cors = require('cors');
-const planetsRouter=require('./routes/planets/planets.router');
-const {launchesRouter}=require('./routes/launches/launches.router');
-
+const api=require('./routes/api');
 const app=express();
 
 app.use(cors({
@@ -15,8 +13,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public'))); //S:\Node_js\NasaProject\server\public\index.html
 //app.use(express.static('public'));
 
-app.use('/planets',planetsRouter);
-app.use('/launches',launchesRouter); //only accept request under /launches route i.e /launches is the root for all request
+app.use('/v1',api);
 
 
 app.get('/*',(req,res)=>{
